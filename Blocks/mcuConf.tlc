@@ -1,0 +1,11 @@
+%implements mcuConf "C"
+
+%function BlockInstanceSetup(block, system) Output
+  
+    %openfile mcuConf="mcuConf.h", "w"
+      %if EXISTS(block.ParamSettings.cubeMXLocation)
+        %<block.ParamSettings.cubeMXLocation>
+      %endif
+    %closefile mcuConf
+  
+%endfunction

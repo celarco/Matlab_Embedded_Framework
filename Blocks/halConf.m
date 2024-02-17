@@ -34,7 +34,11 @@ function setup(block)
   
   % Register the parameters.
   block.NumDialogPrms     = 59;
-  
+  tmp = cell(1,block.NumDialogPrms);
+  for i=1:block.NumDialogPrms
+    tmp{i}='Nontunable';
+  end
+  block.DialogPrmsTunable=tmp;
   % Register the sample times.
   %  [0 offset]            : Continuous sample time
   %  [positive_num offset] : Discrete sample time
